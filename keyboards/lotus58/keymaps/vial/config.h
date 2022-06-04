@@ -41,13 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-    #define RGB_DI_PIN D3
-    #undef RGBLED_NUM
-    #define RGBLED_NUM 12
-	#define RGBLED_SPLIT { 6, 6 }
-
-    #define RGBLIGHT_DEFAULT_VAL 125
-    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
 
     #undef RGBLIGHT_ANIMATIONS
     #undef RGBLIGHT_EFFECT_BREATHING
@@ -60,7 +53,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef RGBLIGHT_EFFECT_ALTERNATING
     #undef RGBLIGHT_EFFECT_TWINKLE
 
-	// #define RGBLIGHT_EFFECT_BREATHING
+    #define RGB_DI_PIN D3
+    #undef RGBLED_NUM
+    #define RGBLED_NUM 12
+	#define RGBLED_SPLIT { 6, 6 }
+
+    #define RGBLIGHT_DEFAULT_VAL 125
+    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
 	#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
     // #define RGBLIGHT_EFFECT_RGB_TEST
 #endif

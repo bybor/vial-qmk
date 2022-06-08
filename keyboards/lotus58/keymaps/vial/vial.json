@@ -2,7 +2,7 @@
     "name": "Lotus58 Glow",
     "vendorId": "0x0079",
     "productId": "0x0058",
-    "lighting": "none",
+    "lighting": "qmk_rgblight",
     "matrix": {
         "rows": 10,
         "cols": 6

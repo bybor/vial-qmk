@@ -22,7 +22,7 @@
 #define ENCODERS_PAD_B { F4 }
 #define ENCODERS_PAD_A_RIGHT { F4 }
 #define ENCODERS_PAD_B_RIGHT { F5 }
-#define ENCODER_RESOLUTION 1
+#define ENCODER_RESOLUTION 2
 #define ENCODER_DIRECTION_FLIP
 
 // Define detection pin handedness
@@ -51,9 +51,6 @@
 
 #define BOOTMAGIC_LITE_ROW_RIGHT 5
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 0
-
-#undef ENCODER_RESOLUTION
-#define ENCODER_RESOLUTION 2
 
 // Disable depreciated
 #define NO_ACTION_MACRO

@@ -21,25 +21,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define VIAL_KEYBOARD_UID {0xAE, 0x5E, 0xC7, 0x5F, 0x6A, 0xAF, 0xB3, 0x50}
 
-// #define MASTER_RIGHT
-
-#ifdef MASTER_RIGHT
-    #define VIAL_UNLOCK_COMBO_ROWS { 6, 8 }
-    #define VIAL_UNLOCK_COMBO_COLS { 5, 5 }
-#else
-    #define VIAL_UNLOCK_COMBO_ROWS { 1, 3 }
-    #define VIAL_UNLOCK_COMBO_COLS { 5, 5 }
-#endif
-
+#undef TAPPING_TERM
+#define TAPPING_TERM 100
 
 #ifdef ENCODER_ENABLE
     #define ENCODER_DIRECTION_FLIP
     #undef ENCODER_RESOLUTION
-    #define ENCODER_RESOLUTION 2
-#endif
-
-#ifdef VIAL_ENCODERS_ENABLE
-    #define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+    #define ENCODER_RESOLUTION 4
 #endif
 
 #ifdef RGBLIGHT_ENABLE
@@ -54,12 +42,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef RGBLIGHT_EFFECT_ALTERNATING
     #undef RGBLIGHT_EFFECT_TWINKLE
 
-    #undef RGBLED_NUM
-    #define RGBLED_NUM 12
-    #define RGBLED_SPLIT { 6, 6 }
-    #define RGB_DI_PIN D3
+    #undef RGBLIGHT_SLEEP
 
+    #define RGB_DI_PIN D3
+    #define RGBLED_NUM 12
+    #define RGBLED_SPLIT { RGBLED_NUM/2, RGBLED_NUM/2 }
+
+    #define RGBLIGHT_LIMIT_VAL 125
     #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_DEFAULT_VAL 125
-    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
+    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL+0
 #endif

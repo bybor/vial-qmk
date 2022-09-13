@@ -1,14 +1,7 @@
-// Copyright 2022 vitvlkv (@vlkv)
+// Copyright 2022 Vitaly Volkov (@vlkv)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-
-#define VENDOR_ID       0xCEE2
-#define PRODUCT_ID      0x0001
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    vitvlkv
-#define PRODUCT         Avalanche
-#define DESCRIPTION     QMK keyboard firmware for Avalanche
 
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 8

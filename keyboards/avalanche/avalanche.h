@@ -1,4 +1,4 @@
-// Copyright 2022 vitvlkv (@vlkv)
+// Copyright 2022 Vitaly Volkov (@vlkv)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -9,6 +9,8 @@
     #include "v2.h"
 #elif KEYBOARD_avalanche_v3
     #include "v3.h"
+#elif KEYBOARD_avalanche_v4
+    #include "v4.h"
 #endif
 
 #include "quantum.h"

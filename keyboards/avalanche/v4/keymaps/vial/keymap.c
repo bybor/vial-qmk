@@ -46,19 +46,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) { /* First encoder */
-        if (clockwise) {
-            tap_code(KC__VOLUP);
-        } else {
-            tap_code(KC__VOLDOWN);
-        }
-    } else if (index == 1) { /* Second encoder */
-        if (clockwise) {
-            tap_code(KC_PGUP);
-        } else {
-            tap_code(KC_PGDOWN);
-        }
-    }
-    return true;
+#ifdef OLED_ENABLE
+
+
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    return OLED_ROTATION_270;
 }
+
+bool oled_task_user(void) {
+    static const char PROGMEM pacman[] = {
+        128,224,248,252,254,254,252,248,240,224,192,128,  0,  0,  0,  0,  0,  0,  0,128,192,224,240,248,252,254,254,252,248,224,128,  0,255,255,255,255,255,255,199,139,147,131,199,255,255,254,252,248,252,254,255,255,255,255,255,255,255,255,255,255,255,255,255,  0,  0,  3, 15, 31, 63,127,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,127, 63, 31, 15,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  3,  3,  7,  7, 15, 15, 15, 15, 15, 15, 15,  7,  7,  3,  3,  1,  0,  0,  0,  0,  0,  0,  0,  0,
+    };
+    static const char PROGMEM ball_empty[] = {
+        0,  0,  0,  0,  0,  0,  0,  0,224, 24,  4,  2,  2,  1,  1,  1,  1,  1,  2,  2,  4, 24,224,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3, 12, 16, 32, 32, 64, 64, 64, 64, 64, 32, 32, 16, 12,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    };
+    static const char PROGMEM ball_full[] = {
+        0,  0,  0,  0,  0,  0,  0,  0,224,248,252,254,254,255,255,255,255,255,254,254,252,248,224,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3, 15, 31, 63, 63,127,127,127,127,127, 63, 63, 31, 15,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    };
+
+    int position = 10;
+
+    int layer = get_highest_layer(layer_state) - 1;
+
+    for (int i = 0; i < 4; i++)
+    {
+        oled_set_cursor(0, position);
+
+        if (layer >= 0 && layer >= i)
+        {
+            oled_write_raw_P(ball_full, sizeof(ball_full));
+        }
+        else
+        {
+            oled_write_raw_P(ball_empty, sizeof(ball_empty));
+        }
+
+        position -= 3;
+    }
+
+    oled_set_cursor(0, 12);
+    oled_write_raw_P(pacman, sizeof(pacman));
+
+    return false;
+}
+
+#endif

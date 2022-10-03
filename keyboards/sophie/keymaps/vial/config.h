@@ -21,13 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define VIAL_KEYBOARD_UID {0xAE, 0x5E, 0xC7, 0x5F, 0x6A, 0xAF, 0xB3, 0x50}
 
-#define MASTER_RIGHT
-
-#ifdef ENCODER_ENABLE
-    #define ENCODER_DIRECTION_FLIP
-    #undef ENCODER_RESOLUTION
-    #define ENCODER_RESOLUTION 4
-#endif
+// #define OLED_DISPLAY_128X64
+// #define MASTER_RIGHT
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLIGHT_ANIMATIONS

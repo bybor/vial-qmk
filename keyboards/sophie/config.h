@@ -20,10 +20,9 @@
 // Encoder support
 #define ENCODERS_PAD_A { F4 }
 #define ENCODERS_PAD_B { F5 }
-// #define ENCODERS_PAD_A_RIGHT { F4 }
-// #define ENCODERS_PAD_B_RIGHT { F5 }
+#define ENCODERS_PAD_A_RIGHT { F5 }
+#define ENCODERS_PAD_B_RIGHT { F4 }
 #define ENCODER_RESOLUTION 4
-#define ENCODER_DIRECTION_FLIP
 
 // Define Communication
 #define USE_SERIAL
@@ -59,7 +58,7 @@
 #ifdef RGBLIGHT_ENABLE
     #define RGB_DI_PIN D3
     #define RGBLED_NUM 16
-    #define RGBLED_SPLIT { RGBLED_NUM/2, RGBLED_NUM/2 }
+    #define RGBLED_SPLIT { 8, 8 }
 
     #define RGBLIGHT_LIMIT_VAL 125
 #endif

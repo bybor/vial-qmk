@@ -4,15 +4,13 @@ VIAL_INSECURE = yes
 
 # ENCODERS
 VIAL_ENCODERS_ENABLE = yes
-ENCODER_ENABLE = yes
-
-OLED_ENABLE = yes
-OLED_DRIVER = SSD1306
 
 EXTRAKEY_ENABLE = yes
 MOUSEKEY_ENABLE = yes
-TAP_DANCE_ENABLE = no
+TAP_DANCE_ENABLE = yes
 
 RGBLIGHT_ENABLE = yes
 
-BOOTMAGIC_ENABLE = lite
+ifeq ($(strip $(OLED_ENABLE)), yes)
+    SRC += ../common/oled.c
+endif

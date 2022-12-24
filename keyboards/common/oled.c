@@ -40,7 +40,9 @@ static void render_layer_state(void) {
     static const char PROGMEM on[2][20] ={{224,248,252,252,254,254,254,254,254,62,14,14,6,6,6,14,12,60,248,224},{3,15,31,31,63,63,63,63,63,62,56,56,48,48,48,56,24,30,15,3}};
 
     #define LAYER_STATE_BITS 4
-    const int current_layer = get_highest_layer(layer_state);
+    const int current_layer = get_highest_layer(layer_state) > get_highest_layer(default_layer_state)
+        ? get_highest_layer(layer_state)
+        : get_highest_layer(default_layer_state);
     for (int i = 0; i < LAYER_STATE_BITS; i++)
     {
         int line = 12 - 1 - 2*(i + 1);

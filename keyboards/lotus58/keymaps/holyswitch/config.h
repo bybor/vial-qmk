@@ -69,3 +69,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_LIMIT_VAL 125
     #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL + 1
 #endif
+
+
+#define IGNORE_MOD_TAP_INTERRUPT  
+#define PERMISSIVE_HOLD  
+#define TAPPING_FORCE_HOLD  
+
+#define MK_KINETIC_SPEED

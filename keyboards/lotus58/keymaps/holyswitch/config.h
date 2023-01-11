@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VIAL_KEYBOARD_UID {0xAE, 0x5E, 0xC7, 0x5F, 0x6A, 0xAF, 0xB3, 0x50}
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 100
+#define TAPPING_TERM 150
 
 #ifdef ENCODER_ENABLE
     #define ENCODER_DIRECTION_FLIP
@@ -42,13 +42,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef RGBLIGHT_EFFECT_ALTERNATING
     #undef RGBLIGHT_EFFECT_TWINKLE
 
-    #undef RGBLIGHT_SLEEP
+    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
-    #define RGB_DI_PIN D3
-    #define RGBLED_NUM 12
+    #ifndef ENCODER_ENABLE
+    #   define RGBLIGHT_EFFECT_BREATHING
+    #   define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #   define RGBLIGHT_EFFECT_SNAKE
+    #   define RGBLIGHT_EFFECT_KNIGHT
+    #   define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #   define RGBLIGHT_EFFECT_ALTERNATING
+    #endif
+
+    #undef RGBLED_NUM
+    #ifdef RGBLIGHT_MODE_UNDERGLOW
+    #   define RGBLED_NUM 6*2
+    #endif
+    #ifdef RGBLIGHT_MODE_BACKLIGHT
+    #   define RGBLED_NUM 29*2
+    #endif
+    #ifdef RGBLIGHT_MODE_FULL
+    #   define RGBLED_NUM 35*2
+    #endif
+
     #define RGBLED_SPLIT { RGBLED_NUM/2, RGBLED_NUM/2 }
 
     #define RGBLIGHT_LIMIT_VAL 125
-    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL+0
+    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL + 1
 #endif

@@ -75,4 +75,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD  
 #define TAPPING_FORCE_HOLD  
 
-#define MK_KINETIC_SPEED
+#define MOUSEKEY_DELAY 16
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_MAX_SPEED 8
+#define MOUSEKEY_WHEEL_DELAY 16
+// The default is 100
+#define MOUSEKEY_WHEEL_INTERVAL 50
+// The default is 40
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 100
+
+
+//#define MK_KINETIC_SPEED
+//#define MOUSEKEY_DELAY     0
+//#define MOUSEKEY_INTERVAL     4     
+//#define MOUSEKEY_MOVE_DELTA     4
+//#define MOUSEKEY_INITIAL_SPEED     5
+//#define MOUSEKEY_BASE_SPEED     1250
+//#define MOUSEKEY_DECELERATED_SPEED     200
+//#define MOUSEKEY_ACCELERATED_SPEED     750
+//#define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS     4
+//#define MOUSEKEY_WHEEL_BASE_MOVEMENTS     8
+//#define MOUSEKEY_WHEEL_ACCELERATED_MOVEMENTS     12
+//#define MOUSEKEY_WHEEL_DECELERATED_MOVEMENTS     2
